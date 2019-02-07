@@ -23,6 +23,10 @@ a:-webkit-any-link {
  cursor: pointer;
 }
 
+button {
+ outline: none;
+}
+
 .mocart__navbar {
  color: #c2cad1;
  width: inherit;
@@ -271,13 +275,14 @@ a:-webkit-any-link {
 .banner__deal {
  display: grid;
  grid-template-columns: 74% 26%;
- grid-gap: 1.4rem;
+ grid-gap: 1.4em;
  padding: 1.2rem 5rem;
  width: inherit;
  height: 370px;
 }
 .banner__deal-main {
- background-color: #fff;
+ background-color: transparent;
+ box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .09);
 }
 .banner__carousel {
  height: 100%;
@@ -308,8 +313,29 @@ a:-webkit-any-link {
 .show__three {
  transform: translate3d(-66.66%, 0, 0);
 }
+.banner__button {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ height: 2rem;
+ width: 100%;
+ background-color: transparent;
+ position: absolute;
+ padding-right: 26.5rem;
+}
+.banner__button > button {
+ background-color: #c2cad1;
+ width: 12px;
+ height: 12px;
+ border-radius: 50%;
+ margin: 0 1.5rem;
+}
+.banner__button .slide__btn-1 {
+ background-color: #2ca5fa;
+}
 .banner__deal-today {
  background-color: #fff;
+ box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .09);
  display: flex;
  flex-direction: column;
  align-items: center;

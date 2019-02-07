@@ -271,11 +271,51 @@ a:-webkit-any-link {
  display: grid;
  grid-template-columns: 70% 30%;
  grid-gap: 1.4rem;
- padding: .8rem 5rem;
+ padding: 1.2rem 5rem;
 }
 .banner__deal-main {
  background-color: #fff;
 }
 .banner__deal-today {
  background-color: #fff;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ padding: .5rem 0;
+}
+.title__deal-today {
+ text-transform: uppercase;
+ font-size: 20px;
+ font-weight: bolder;
+ color: #2ca5fa;
+}
+.sub__deal-today {
+ text-transform: uppercase;
+ font-weight: bolder;
+ color: #333;
+}
+.brand-name__deal-today {
+ color: #333;
+ font-weight: bold;
+ font-size: .9rem;
+ margin-bottom: 1rem;
+}
+.sale-info__deal-today {
+ display: flex;
+ align-items: center;
+ justify-content: space-around;
+ width: 100%;
+}
+.sale-off__info {
+ font-size: 15px;
+ text-transform: uppercase;
+ color: #333;
+ font-weight: bolder;
+}
+.sale-off__info > span {
+ text-decoration: line-through; 
+}
+.sale-off__version {
+ font-size: 1.5rem;
+ color: #2ca5fa;
 }

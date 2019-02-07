@@ -1,0 +1,20 @@
+{
+  "name": "psd2html",
+  "version": "1.0.0",
+  "description": "An E-commerce site inspired by a PSD design of freebies",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChauDinh/mo-cart.git"
+  },
+  "author": "Chau Dinh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ChauDinh/mo-cart/issues"
+  },
+  "homepage": "https://github.com/ChauDinh/mo-cart#readme"
+}

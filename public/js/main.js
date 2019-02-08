@@ -13,6 +13,9 @@ slideOne.addEventListener("click", e => {
  slideTwo.style.visibility = "visible";
  slideThree.style.visibility = "hidden";
  bannerCarousel.classList.toggle("show__two");
+ buttonOne.style.backgroundColor = "#c2cad1";
+ buttonTwo.style.backgroundColor = "#2ca5fa";
+ buttonThree.style.backgroundColor = "#c2cad1";
 });
 
 slideTwo.addEventListener("click", e => {
@@ -20,12 +23,18 @@ slideTwo.addEventListener("click", e => {
  slideTwo.style.visibility = "hidden";
  slideThree.style.visibility = "visible";
  bannerCarousel.classList.toggle("show__three");
+ buttonOne.style.backgroundColor = "#c2cad1";
+ buttonTwo.style.backgroundColor = "#c2cad1";
+ buttonThree.style.backgroundColor = "#2ca5fa";
 });
 
 slideThree.addEventListener("click", e => {
  slideOne.style.visibility = "visible";
  bannerCarousel.classList.remove("show__two");
  bannerCarousel.classList.remove("show__three");
+ buttonOne.style.backgroundColor = "#2ca5fa";
+ buttonTwo.style.backgroundColor = "#c2cad1";
+ buttonThree.style.backgroundColor = "#c2cad1";
 });
 
 buttonOne.addEventListener("click", e => {
@@ -34,6 +43,9 @@ buttonOne.addEventListener("click", e => {
  slideThree.style.visibility = "hidden";
  bannerCarousel.classList.remove("show__two");
  bannerCarousel.classList.remove("show__three");
+ buttonOne.style.backgroundColor = "#2ca5fa";
+ buttonTwo.style.backgroundColor = "#c2cad1";
+ buttonThree.style.backgroundColor = "#c2cad1";
 });
 
 buttonTwo.addEventListener("click", e => {
@@ -42,6 +54,9 @@ buttonTwo.addEventListener("click", e => {
  slideThree.style.visibility = "hidden";
  bannerCarousel.classList.toggle("show__two");
  bannerCarousel.classList.remove("show__three");
+ buttonOne.style.backgroundColor = "#c2cad1";
+ buttonTwo.style.backgroundColor = "#2ca5fa";
+ buttonThree.style.backgroundColor = "#c2cad1";
 });
 
 buttonThree.addEventListener("click", e => {
@@ -50,5 +65,8 @@ buttonThree.addEventListener("click", e => {
  slideThree.style.visibility = "visible";
  bannerCarousel.classList.toggle("show__three");
  bannerCarousel.classList.remove("show__two");
+ buttonOne.style.backgroundColor = "#c2cad1";
+ buttonTwo.style.backgroundColor = "#c2cad1";
+ buttonThree.style.backgroundColor = "#2ca5fa";
 })
 

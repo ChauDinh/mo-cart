@@ -14,7 +14,7 @@ body {
 }
 
 a {
- text-decoration: none;
+ text-decoration: none !important;
  color: #e5edf4 !important;
 }
 
@@ -274,68 +274,31 @@ button {
 /* Banner and Deal Section */
 .banner__deal {
  display: grid;
- grid-template-columns: 74% 26%;
- grid-gap: 1.2em;
+ grid-template-columns: 70% 30%;
+ grid-row-gap: 0;
+ grid-column-gap: 1.2em;
+ align-content: center;
  padding: 1.2rem 5rem;
  width: inherit;
- height: 380px;
+ height: 400px;
 }
+
+/* Banner Carousel */
 .banner__deal-main {
- background-color: transparent;
+ height: 21.5rem;
 }
-.banner__carousel {
- height: 320px;
- width: 300%;
- display: flex;
- transition: transform 0.1s ease-in;
- overflow: hidden;
- list-style: none;
- transition: transform 0.3s ease-in;
+.carousel-item > img {
+ width: inherit;
+ height: 21.5rem;
 }
-.slide__one {
- height: 100%;
- width: 100%;
-}
-.slide__two {
- height: 100%;
- width: 100%;
- visibility: hidden;
-}
-.slide__three {
- height: 100%;
- width: 100%;
- visibility: hidden;
-}
-.show__two {
- transform: translate3d(-33.33%, 0, 0);
-}
-.show__three {
- transform: translate3d(-66.66%, 0, 0);
-}
-.banner__button {
- display: flex;
- align-items: center;
- justify-content: center;
- height: 1.2rem;
- width: 100%;
- background-color: transparent;
-}
-.banner__button > button {
- background-color: #c2cad1;
- width: 12px;
- height: 12px;
- border-radius: 50%;
- margin: 0 1.5rem;
-}
-.banner__button .slide__btn-1 {
- background-color: #2ca5fa;
-}
+
+/* Banner Deal Today */
 .banner__deal-today {
  background-color: #fff;
  display: flex;
  flex-direction: column;
  align-items: center;
- height: 320px;
+ height: 21.5rem;
  padding: .5rem 0;
 }
 .title__deal-today {
@@ -354,6 +317,10 @@ button {
  font-weight: bold;
  font-size: .9rem;
  margin-bottom: 1rem;
+}
+.picture__deal-today > img {
+ width: 100%;
+
 }
 .sale-info__deal-today {
  display: flex;
@@ -380,7 +347,7 @@ button {
  display: flex;
  align-items: center;
  background-color: #fff;
- margin: .8rem 0;
+ margin: 0 0;
  padding: 1.2rem 5rem;
  font-size: 15px;
 }
@@ -400,6 +367,6 @@ button {
 .grid__card {
  height: 300px;
  width: inherit;
- margin: 0 5rem;
+ margin: 2rem 5rem;
  background-color: red;
 }

@@ -4,7 +4,7 @@ Converting a mock e-commerce PSD design into HTML, CSS.
 
 ### Structures, Planning
 
-* Use a mock E-commerce design created by Photoshop
+* Use a mock E-commerce Photoshop design
 * Use Bootstrap to make the responsive of the site
 * Use Bootstrap Carousel
 * Use NodeJS for the server

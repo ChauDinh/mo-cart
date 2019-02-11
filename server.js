@@ -28,6 +28,51 @@ const products = [
   id: 4,
   name: "Quan Lot Nam Ren",
   image: "/public/views/products/images/qlnr.jpg"
+ },
+ {
+  id: 5,
+  name: "Dong Ho Nam 1",
+  image: "/public/views/products/images/dong-ho-1.jpg"
+ }, 
+ {
+  id: 6,
+  name: "Dong Ho Nam 2",
+  image: "/public/views/products/images/dong-ho-2.png"
+ },
+ {
+  id: 7,
+  name: "Iphone X 64GB",
+  image: "/public/views/products/images/ipX-64.png"
+ },
+ {
+  id: 8,
+  name: "Iphone X 128GB",
+  image: "/public/views/products/images/ipx-128.png"
+ },
+ {
+  id: 9,
+  name: "Iphone 7 Plus 32/64GB",
+  image: "/public/views/products/images/ip7-plus.png"
+ },
+ {
+  id: 10,
+  name: "Ao So Mi Nam 1",
+  image: "/public/views/products/images/so-mi-nam-1.jpg"
+ },
+ {
+  id: 11,
+  name: "Ao So Mi Nam 2",
+  image: "/public/views/products/images/so-mi-nam-2.jpg"
+ },
+ {
+  id: 12,
+  name: "Ao So Mi Nu 1",
+  image: "/public/views/products/images/so-mi-nu-1.jpg"
+ },
+ {
+  id: 13,
+  name: "Ao So Mi Nu 2",
+  image: "/public/views/products/images/so-mi-nu-2.jpg"
  }
 ];
 

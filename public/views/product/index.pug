@@ -1,6 +1,9 @@
-h1 View product
+extends ../layout/common.pug 
 
-img(src=product.image, alt=product.id)
-br
-h4= product.name
+block content
+ h1.ml-5 View product
+ br
+ br
+ img(src=product.image, alt=product.id, class="rounded mx-auto d-block mb-5")
+ h4(style="text-align: center")= product.name
  

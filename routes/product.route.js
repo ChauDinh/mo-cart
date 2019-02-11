@@ -23,8 +23,7 @@ router.get("/search", (req, res) => {
 router.get("/:id", (req, res) => {
  let id = parseInt(req.params.id);
  let product = db.get("products").find({ id: id }).value();
- console.log(product);
-
+ 
  res.render("product/index", {
   product: product
  });

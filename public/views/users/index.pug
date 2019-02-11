@@ -6,4 +6,6 @@ form(action="/users/search", method="GET")
 
 ul
  each user in users
-  li= user.name
+  li
+   span= user.name
+   a(href="/users/" + user.id) View

@@ -1,13 +1,17 @@
 const express = require("express");
 const path = require("path");
 const bodyParser = require("body-parser");
+const low = require("lowdb");
+const FileSync = require("lowdb/adapters/FileSync");
+const adapter = new FileSync("db.json");
+const db = low(adapter);
+
+// Set defaults - required if JSON file is empty
+db.defaults({ users: [], products: [] }).write();
+
+
 const app = express();
 const port = 8080;
-
-const users = [
- { id: 1, name: "Chau" },
- { id: 2, name: "Leslie" }
-];
 
 const products = [
  {
@@ -105,7 +109,7 @@ app.get("/search", (req, res) => {
 
 app.get("/users", (req, res) => {
  res.render('users/index.pug', {
-  users: users
+  users: db.get("users").value()
  })
 });
 
@@ -128,6 +132,7 @@ app.get("/products/search", (req, res) => {
 
 app.get("/users/search", (req, res) => {
  let q = req.query.q;
+ let users = db.get("users").value();
  let matchedUsers = users.filter(user => {
   return user.name.toLowerCase().indexOf(q.toLowerCase()) !== -1;
  })
@@ -142,7 +147,7 @@ app.get("/users/create", (req, res) => {
 });
 
 app.post("/users/create", (req, res) => {
- users.push(req.body);
+ db.get("users").push(req.body).write();
  res.redirect("/users");
 });
 

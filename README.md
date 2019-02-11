@@ -108,3 +108,45 @@ app.post("/users/create", (req, res) => {
  res.redirect("/users");
 });
 ```
+<hr> 
+
+### Use lowdb to store data
+
+##### Installation
+```
+npm install lowdb --save
+```
+
+##### Set defaults
+```js
+const low = require("lowdb");
+const FileSync = require("lowdb/adapters/FileSync");
+const adapter = new FileSync("db.json");
+const db = low(adapter);
+
+db.defaults({ users: [], products: [] }).wriet();
+```
+
+##### Add to database
+```js
+...
+app.post("users/create", (req, res) => {
+ db.get("users").push(req.body).write();
+ res.redirect("/users");
+});
+```
+
+##### Search database
+```js
+app.get("users/search", (req, res) => {
+ let q = req.query.q;
+ let users = db.get("users").value();
+ let matchedUsers = users.filter(user => {
+  return user.name.toLowerCase().indexOf(q.toLowerCase()) !== -1;
+ });
+ 
+ res.render('users/index', {
+  users: matchedUsers
+ });
+});
+```

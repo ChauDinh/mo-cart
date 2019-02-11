@@ -49,4 +49,29 @@ Converting a mock e-commerce PSD design into HTML, CSS.
 * Receive a request from client and response a HTML
 * Use page reloading
 
+<hr>
 
+### Creating form to search data
+
+* Use form action
+* Use GET method
+
+Create a search form (pug)
+```pug
+form(action="/users/search", method="GET")
+ input(type="text", name="q")
+ button Search
+```
+Then add logic for searching the typed text
+```js
+app.get("/users/search", (req, res) => {
+ let q = req.query.q;
+ let matchedUsers = users.filter(user => {
+  return user.name.toLowerCase().indexOf(q.toLowerCase()) !== -1;
+ })
+ 
+ res.render('users/index', {
+  users: matchedUsers
+ })
+});
+```

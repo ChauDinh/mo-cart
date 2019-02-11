@@ -21,10 +21,10 @@ html(lang='en')
             img(src='../../src/logo/logo.png', alt='logo')
           .wrapper__search-section
             .searchbar__main
-              form.searchbar-input(role='search', autocomplete='off')
-                input.searchbar-input__input(type='text', aria-label='Search entire store here...', maxlength='128', placeholder='Search entire store here...', value='')
-              button.btn.btn-solid-primary(type='button')
-                img(src='../../src/images/search-button.png', alt='button-icon')
+              form.searchbar-input(role='search', autocomplete='off', action="/search", method="GET")
+                input.searchbar-input__input(type='text', aria-label='Search entire store here...', maxlength='128', placeholder='Search entire store here...', value='', name="q")
+                button.btn.btn-solid-primary(type="submit")
+                  img(src='../../src/images/search-button.png', alt='button-icon')
           .wrapper__user-section
             .user__account
               img(src='../../src/images/account.png', alt='user-account')

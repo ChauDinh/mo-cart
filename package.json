@@ -21,7 +21,8 @@
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
     "lowdb": "^1.0.0",
-    "pug": "^2.0.3"
+    "pug": "^2.0.3",
+    "shortid": "^2.2.14"
   },
   "devDependencies": {
     "nodemon": "^1.18.10"

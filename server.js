@@ -4,6 +4,8 @@ const bodyParser = require("body-parser");
 const low = require("lowdb");
 const FileSync = require("lowdb/adapters/FileSync");
 const adapter = new FileSync("db.json");
+const shortid = require("shortid");
+
 const db = low(adapter);
 
 // Set defaults - required if JSON file is empty
@@ -12,74 +14,6 @@ db.defaults({ users: [], products: [] }).write();
 
 const app = express();
 const port = 8080;
-
-const products = [
- {
-  id: 1,
-  name: "Quan Lot Nu The Thao",
-  image: "/public/views/products/images/qlntt.jpg"
- },
- {
-  id: 2,
-  name: "Quan Lot Nu",
-  image: "/public/views/products/images/qln.png"
- },
- {
-  id: 3,
-  name: "Quan Lot Nam",
-  image: "/public/views/products/images/qln.jpg"
- },
- {
-  id: 4,
-  name: "Quan Lot Nam Ren",
-  image: "/public/views/products/images/qlnr.jpg"
- },
- {
-  id: 5,
-  name: "Dong Ho Nam 1",
-  image: "/public/views/products/images/dong-ho-1.jpg"
- }, 
- {
-  id: 6,
-  name: "Dong Ho Nam 2",
-  image: "/public/views/products/images/dong-ho-2.png"
- },
- {
-  id: 7,
-  name: "Iphone X 64GB",
-  image: "/public/views/products/images/ipX-64.png"
- },
- {
-  id: 8,
-  name: "Iphone X 128GB",
-  image: "/public/views/products/images/ipx-128.png"
- },
- {
-  id: 9,
-  name: "Iphone 7 Plus 32/64GB",
-  image: "/public/views/products/images/ip7-plus.png"
- },
- {
-  id: 10,
-  name: "Ao So Mi Nam 1",
-  image: "/public/views/products/images/so-mi-nam-1.jpg"
- },
- {
-  id: 11,
-  name: "Ao So Mi Nam 2",
-  image: "/public/views/products/images/so-mi-nam-2.jpg"
- },
- {
-  id: 12,
-  name: "Ao So Mi Nu 1",
-  image: "/public/views/products/images/so-mi-nu-1.jpg"
- },
- {
-  id: 13,
-  name: "Ao So Mi Nu 2",
-  image: "/public/views/products/images/so-mi-nu-2.jpg"
- }
-];
 
 app.set('views', './public/views');
 app.set('view engine', 'pug');
@@ -92,12 +26,13 @@ app.use(express.static(path.join(__dirname)));
 
 app.get("/", (req, res) => {
  res.render('index', {
-  products: products
+  products: db.get("products").value()
  });
 });
 
 app.get("/search", (req, res) => {
  let q = req.query.q;
+ let products = db.get("products").value();
  let matchedProducts = products.filter(product => {
   return product.name.toLowerCase().indexOf(q.toLowerCase()) !== -1;
  })
@@ -115,12 +50,13 @@ app.get("/users", (req, res) => {
 
 app.get("/products", (req, res) => {
  res.render('products/index.pug', {
-  products: products
+  products: db.get("products").value()
  })
 });
 
 app.get("/products/search", (req, res) => {
  let q = req.query.q;
+ let products = db.get("products").value();
  let matchesProducts = products.filter(product => {
   return product.name.toLowerCase().indexOf(q.toLowerCase()) !== -1;
  })
@@ -146,10 +82,22 @@ app.get("/users/create", (req, res) => {
  res.render("users/create")
 });
 
+app.get("/products/:id", (req, res) => {
+ let id = req.params.id;
+ let product = db.get("products").find({ id: id }).value();
+
+ res.render("product/index", {
+  product: product
+ });
+})
+
+
 app.post("/users/create", (req, res) => {
+ req.body.id = shortid.generate();
  db.get("users").push(req.body).write();
  res.redirect("/users");
 });
+
 
 app.listen(port, () => console.log(`The app is listening on port ${port}`));
 

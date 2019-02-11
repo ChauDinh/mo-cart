@@ -1,5 +1,6 @@
 const express = require("express");
 const path = require("path");
+const bodyParser = require("body-parser");
 const app = express();
 const port = 8080;
 
@@ -79,6 +80,9 @@ const products = [
 app.set('views', './public/views');
 app.set('view engine', 'pug');
 
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname)));
 
@@ -134,9 +138,12 @@ app.get("/users/search", (req, res) => {
 });
 
 app.get("/users/create", (req, res) => {
- res.render("users/create", {
-  users
- })
+ res.render("users/create")
+});
+
+app.post("/users/create", (req, res) => {
+ users.push(req.body);
+ res.redirect("/users");
 })
 
 app.listen(port, () => console.log(`The app is listening on port ${port}`));

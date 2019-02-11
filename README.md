@@ -75,3 +75,36 @@ app.get("/users/search", (req, res) => {
  })
 });
 ```
+<hr>
+
+### Creating form to add data
+
+* Use form action
+* Use POST method
+* Use req.body
+
+Create a form 
+```pug
+form(action="/users/create", method="POST")
+ label Name
+ input(type="text", name="name")
+ button Create
+```
+
+Then use body-parser middleware to retreive POST query parameters
+##### Installation
+```
+npm install body-parser --save
+```
+##### Write middleware
+```js
+const bodyParser = require("body-parser");
+...
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+...
+app.post("/users/create", (req, res) => {
+ users.push(req.body);
+ res.redirect("/users");
+});
+```

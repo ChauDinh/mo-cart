@@ -144,7 +144,7 @@ app.get("/users/create", (req, res) => {
 app.post("/users/create", (req, res) => {
  users.push(req.body);
  res.redirect("/users");
-})
+});
 
 app.listen(port, () => console.log(`The app is listening on port ${port}`));
 

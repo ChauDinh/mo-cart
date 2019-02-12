@@ -55,73 +55,90 @@
     {
       "name": "Nguyen Dinh Ton Nu",
       "id": "1itHp786e"
+    },
+    {
+      "name": "Pep Guardiola",
+      "id": "wxjcCqIYx"
     }
   ],
   "products": [
     {
       "id": 1,
       "name": "Quan Lot Nu The Thao",
-      "image": "/public/views/products/images/qlntt.jpg"
+      "image": "/public/views/products/images/qlntt.jpg",
+      "description": "This is the best product of Women uderware released by 2018 of Victoria. Recommended for sport activities and even daily routine. It has free size, suitable for both Asian and European market."
     },
     {
       "id": 2,
       "name": "Quan Lot Nu",
-      "image": "/public/views/products/images/qln.png"
+      "image": "/public/views/products/images/qln.png",
+      "description": "The underwear was produced based on an breakthrought process, with tons of modern system and design. It is suitable for Asian market and those are Eroupean having small butts."
     },
     {
       "id": 3,
       "name": "Quan Lot Nam",
-      "image": "/public/views/products/images/qln.jpg"
+      "image": "/public/views/products/images/qln.jpg",
+      "description": "Such amazing one for men. It comes from a famous brand, bringing the truth from customers over the years. It is suitable for American and Asian market since the size is rangeable."
     },
     {
       "id": 4,
       "name": "Quan Lot Nam Ren",
-      "image": "/public/views/products/images/qlnr.jpg"
+      "image": "/public/views/products/images/qlnr.jpg",
+      "description": "Such amazing, sexy and comfortable one for men. It comes from a recently well-known brand of Korea. It is suitable for Asian market since the form is uniquely designed for Asian customers. However, Eroupean and American buyers would buy it too."
     },
     {
       "id": 5,
       "name": "Dong Ho Nam 1",
-      "image": "/public/views/products/images/dong-ho-1.jpg"
+      "image": "/public/views/products/images/dong-ho-1.jpg",
+      "description": "Quartz wrist watch with analog display with luminous hour/minute hands,calendar, and chronograph function \n A clock is an instrument used to measure, keep, and indicate time. ... Traditionally in horology, the term `clock` was used for a striking clock, while a `clock` that did not strike the hours audibly was called a timepiece. In general usage today, a `clock` refers to any device for measuring and displaying the time."
     },
     {
       "id": 6,
       "name": "Dong Ho Nam 2",
-      "image": "/public/views/products/images/dong-ho-2.png"
+      "image": "/public/views/products/images/dong-ho-2.png",
+      "description": "A clock is an instrument used to measure, keep, and indicate time. ... Traditionally in horology, the term clock was used for a striking clock, while a clock that did not strike the hours audibly was called a timepiece. In general usage today, a clock refers to any device for measuring and displaying the time."
     },
     {
       "id": 7,
       "name": "Iphone X 64GB",
-      "image": "/public/views/products/images/ipX-64.png"
+      "image": "/public/views/products/images/ipX-64.png",
+      "description": "A mobile phone is a wireless handheld device that allows users to make and receive calls and to send text messages, among other features. The earliest generation of mobile phones could only make and receive calls. ... A mobile phone may also be known as a cellular phone or simply a cell phone. \n The iPhone is a smartphone developed by Apple. ... The iPhone has a sleek, minimalist design, and differs from other smartphones in its lack of buttons. Most operations on the iPhone are performed using the touch screen display."
     },
     {
       "id": 8,
       "name": "Iphone X 128GB",
-      "image": "/public/views/products/images/ipx-128.png"
+      "image": "/public/views/products/images/ipx-128.png",
+      "description": "A mobile phone is a wireless handheld device that allows users to make and receive calls and to send text messages, among other features. The earliest generation of mobile phones could only make and receive calls. ... A mobile phone may also be known as a cellular phone or simply a cell phone. \n The iPhone is a smartphone developed by Apple. ... The iPhone has a sleek, minimalist design, and differs from other smartphones in its lack of buttons. Most operations on the iPhone are performed using the touch screen display."
     },
     {
       "id": 9,
       "name": "Iphone 7 Plus 32/64GB",
-      "image": "/public/views/products/images/ip7-plus.png"
+      "image": "/public/views/products/images/ip7-plus.png",
+      "description": "A mobile phone is a wireless handheld device that allows users to make and receive calls and to send text messages, among other features. The earliest generation of mobile phones could only make and receive calls. ... A mobile phone may also be known as a cellular phone or simply a cell phone. \n The iPhone is a smartphone developed by Apple. ... The iPhone has a sleek, minimalist design, and differs from other smartphones in its lack of buttons. Most operations on the iPhone are performed using the touch screen display."
     },
     {
       "id": 10,
       "name": "Ao So Mi Nam 1",
-      "image": "/public/views/products/images/so-mi-nam-1.jpg"
+      "image": "/public/views/products/images/so-mi-nam-1.jpg",
+      "description": "A T-shirt (or t shirt, or tee) is a style of unisex fabric shirt named after the T shape of its body and sleeves. Traditionally it has short sleeves and a round neckline, known as a crew neck, which lacks a collar."
     },
     {
       "id": 11,
       "name": "Ao So Mi Nam 2",
-      "image": "/public/views/products/images/so-mi-nam-2.jpg"
+      "image": "/public/views/products/images/so-mi-nam-2.jpg",
+      "description": "A T-shirt (or t shirt, or tee) is a style of unisex fabric shirt named after the T shape of its body and sleeves. Traditionally it has short sleeves and a round neckline, known as a crew neck, which lacks a collar."
     },
     {
       "id": 12,
       "name": "Ao So Mi Nu 1",
-      "image": "/public/views/products/images/so-mi-nu-1.jpg"
+      "image": "/public/views/products/images/so-mi-nu-1.jpg",
+      "description": "This Hanes nano-t t-shirt for women is so light and soft you'll fall in love with it. Ultra-light 100 percent ring-spun cotton jersey feels great on your skin and drapes beautifully"
     },
     {
       "id": 13,
       "name": "Ao So Mi Nu 2",
-      "image": "/public/views/products/images/so-mi-nu-2.jpg"
+      "image": "/public/views/products/images/so-mi-nu-2.jpg",
+      "description": "This Hanes nano-t t-shirt for women is so light and soft you'll fall in love with it. Ultra-light 100 percent ring-spun cotton jersey feels great on your skin and drapes beautifully"
     }
   ]
 }

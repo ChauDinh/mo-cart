@@ -4,6 +4,14 @@ block content
  h1.ml-5 View product
  br
  br
- img(src=product.image, alt=product.id, class="rounded mx-auto d-block mb-5")
- h4(style="text-align: center")= product.name
+ .card.mb-3.mx-auto(style="max-width: 540px; padding: .5rem 1rem;")
+  .row.no-gutters
+   .col-md-4
+    img(src=product.image, class="card-img" alt=product.id)
+   .col-md-8
+    .card-body
+     h5= product.name
+     p.card-text= product.description
+     p.card-text
+      small.text-muted Last update 3 days ago
  

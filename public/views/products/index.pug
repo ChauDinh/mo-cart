@@ -1,15 +1,18 @@
 extends ../layout/common.pug
 
 block content
+  br
   h1.ml-5 Products
-
-  form(action="/products/search", method="GET", class="d-flex ml-5 mr-5")
-   input(type="text", name="q", class="form-control")
-   button(class="btn btn-primary ml-2") Search
-
-  ul
-  each product in products
-   li(class="ml-5 mr-5")
-    span= product.name
-    span &nbsp;
-    a(href="/products/" + product.id) View
+  hr.ml-5.mr-5
+  br
+  .card-columns.ml-5.mr-5
+   each product in products
+    .card
+     img(src=product.image, alt=product.id, class="card-img-top rounded mx-auto d-block", style="max-width: 200px; margin-top: .8rem")
+     .card-body
+      h5.card-title(style="text-align: center")= product.name
+      .row.no-gutters.ml-3.mr-3
+       a(href="/products/" + product.id, class="btn btn-primary" role="button") View Product
+       h6(style="font-size: 1.5rem; margin: auto auto;" class="float-right text-primary") $9.99
+     .card-footer
+      small.text-muted Last updated 3 days ago

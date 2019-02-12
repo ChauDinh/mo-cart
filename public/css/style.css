@@ -10,6 +10,7 @@ body {
  font-size: .875rem;
  font-weight: lighter;
  background-color: #e0e0e0;
+ width: auto;
  overflow-x: hidden;
 }
 

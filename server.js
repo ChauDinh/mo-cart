@@ -33,7 +33,8 @@ app.get("/search", (req, res) => {
  })
 
  res.render('products/index', {
-  products: matchedProducts
+  products: matchedProducts,
+  search: q
  })
 });
 

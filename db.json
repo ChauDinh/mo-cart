@@ -64,37 +64,37 @@
   "products": [
     {
       "id": 1,
-      "name": "Quan Lot Nu The Thao",
-      "image": "/public/views/products/images/qlntt.jpg",
+      "name": "Giay Sneaker Nu",
+      "image": "/public/views/products/images/sneaker-nu-1.jpg",
       "description": "This is the best product of Women uderware released by 2018 of Victoria. Recommended for sport activities and even daily routine. It has free size, suitable for both Asian and European market."
     },
     {
       "id": 2,
-      "name": "Quan Lot Nu",
-      "image": "/public/views/products/images/qln.png",
+      "name": "Giay Sneaker Nu",
+      "image": "/public/views/products/images/sneaker-nu-2.jpg",
       "description": "The underwear was produced based on an breakthrought process, with tons of modern system and design. It is suitable for Asian market and those are Eroupean having small butts."
     },
     {
       "id": 3,
-      "name": "Quan Lot Nam",
-      "image": "/public/views/products/images/qln.jpg",
+      "name": "Giay Sneaker Nam",
+      "image": "/public/views/products/images/sneaker-nam-1.jpg",
       "description": "Such amazing one for men. It comes from a famous brand, bringing the truth from customers over the years. It is suitable for American and Asian market since the size is rangeable."
     },
     {
       "id": 4,
-      "name": "Quan Lot Nam Ren",
-      "image": "/public/views/products/images/qlnr.jpg",
+      "name": "Giay Nam New Balance 999",
+      "image": "/public/views/products/images/sneaker-nam-2.jpg",
       "description": "Such amazing, sexy and comfortable one for men. It comes from a recently well-known brand of Korea. It is suitable for Asian market since the form is uniquely designed for Asian customers. However, Eroupean and American buyers would buy it too."
     },
     {
       "id": 5,
-      "name": "Dong Ho Nam 1",
+      "name": "Dong Ho Nam Quartz",
       "image": "/public/views/products/images/dong-ho-1.jpg",
       "description": "Quartz wrist watch with analog display with luminous hour/minute hands,calendar, and chronograph function \n A clock is an instrument used to measure, keep, and indicate time. ... Traditionally in horology, the term `clock` was used for a striking clock, while a `clock` that did not strike the hours audibly was called a timepiece. In general usage today, a `clock` refers to any device for measuring and displaying the time."
     },
     {
       "id": 6,
-      "name": "Dong Ho Nam 2",
+      "name": "Dong Ho Nam Clock",
       "image": "/public/views/products/images/dong-ho-2.png",
       "description": "A clock is an instrument used to measure, keep, and indicate time. ... Traditionally in horology, the term clock was used for a striking clock, while a clock that did not strike the hours audibly was called a timepiece. In general usage today, a clock refers to any device for measuring and displaying the time."
     },

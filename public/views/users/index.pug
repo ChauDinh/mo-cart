@@ -10,5 +10,6 @@ block content
  ul
   each user in users
    li
-    span= user.name
-    a(href="/users/" + user.id) View
+    .row.ml-5.mr-5
+     span(style="margin: auto auto")= user.name
+     a(href="/users/" + user.id, class="btn btn-primary", role="button") View

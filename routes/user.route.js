@@ -1,7 +1,10 @@
 const express = require("express");
+const path = require("path");
 const router = express.Router();
 
 const controller = require("../controllers/user.controller");
+
+router.use(express.static("public"));
 
 router.get("/", controller.server);
 

@@ -1,15 +1,18 @@
-extends ../layout/common.pug 
+doctype html
+html
+ head
+  link(rel="stylesheet", href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css" integrity="sha384-PDle/QlgIONtM1aqA2Qemk5gPOE7wFq8+Em+G/hmo5Iq0CCmYZLv3fVRDJ4MMwEA" crossorigin="anonymous")
+  link(rel="stylesheet", href="/css/style.css")
+ body
+  h1 Users
+  a(href="/users/create") Add new
+  form(action="/users/search", method="GET")
+   input(type="text", name="q")
+   button Search
 
-block content
- h1 Users
- a(href="/users/create") Add new
- form(action="/users/search", method="GET")
-  input(type="text", name="q")
-  button Search
-
- ul
-  each user in users
-   li
-    .row.ml-5.mr-5
-     span(style="margin: auto auto")= user.name
-     a(href="/users/" + user.id, class="btn btn-primary", role="button") View
+  ul
+   each user in users
+    li
+     .row.ml-5.mr-5
+      span(style="margin: auto auto")= user.name
+      a(href="/users/" + user.id, class="btn btn-primary", role="button") View

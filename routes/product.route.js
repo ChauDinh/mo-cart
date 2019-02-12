@@ -3,6 +3,8 @@ const router = express.Router();
 
 const controller = require("../controllers/product.controller");
 
+router.use(express.static("public"));
+
 router.get("/", controller.server);
 
 router.get("/search", controller.search);

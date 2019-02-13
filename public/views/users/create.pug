@@ -20,14 +20,18 @@ html
   .container
    h1.pt-5 Create User
 
+   if errors
+    each error in errors
+      .alert.alert-danger= error
+
    form(action="/users/create", method="POST")
     .form-group
      label(for="name") Name
-     input#name(name="name", type="text").form-control
+     input#name(name="name", type="text", value=values ? values.name : "").form-control
 
     .form-group 
      label(for="phone") Phone
-     input#phone(name="phone", type="text").form-control
+     input#phone(name="phone", type="text", value=values ? values.phone : "").form-control
 
     button.btn.btn-primary(type="submit") Create
 

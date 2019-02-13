@@ -21,7 +21,7 @@ html
    a.btn.btn-primary(href="/users/create") Add New
    .d-flex.align-items-center
     form.ml-auto(action="/users/search", method="GET", class="d-flex", role="search")
-     input.form-control(name="q", type="text")
+     input.form-control(name="q", type="text", value=values)
      button(class="btn btn-primary ml-2") Search
    br
    table.table

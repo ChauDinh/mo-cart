@@ -28,7 +28,7 @@ html(lang='en')
         span.navbar-toggler-icon
       #navbarSupportedContent.collapse.navbar-collapse
         form.form-inline.searchField(action="/search", method="GET", role="search", autocomplete="off")
-          input.form-control.mr-sm-1(type='search', placeholder='Search entire store here', aria-label='Search', name="q")
+          input.form-control.mr-sm-1(type='search', placeholder='Search entire store here', aria-label='Search', name="q", value=search)
           button.btn.btn-primary.my-2.my-sm-0(type="submit")
             img.mx-2(src='../../../src/images/search-button.png', alt='seach-button')
         ul.navbar-nav.mr-auto

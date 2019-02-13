@@ -1,18 +1,41 @@
 doctype html
 html
  head
-  link(rel="stylesheet", href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css" integrity="sha384-PDle/QlgIONtM1aqA2Qemk5gPOE7wFq8+Em+G/hmo5Iq0CCmYZLv3fVRDJ4MMwEA" crossorigin="anonymous")
-  link(rel="stylesheet", href="/css/style.css")
+  link(rel="stylesheet", href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css", integrity="sha384-PDle/QlgIONtM1aqA2Qemk5gPOE7wFq8+Em+G/hmo5Iq0CCmYZLv3fVRDJ4MMwEA", crossorigin="anonymous")
  body
-  h1 Users
-  a(href="/users/create") Add new
-  form(action="/users/search", method="GET")
-   input(type="text", name="q")
-   button Search
+  nav.navbar.navbar-expand-lg.navbar-light.bg-light
+   a.navbar-brand(href='#') MO.Cart
+   button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarNav', aria-controls='navbarNav', aria-expanded='false', aria-label='Toggle navigation')
+     span.navbar-toggler-icon
+   #navbarNav.collapse.navbar-collapse
+     ul.navbar-nav
+       li.nav-item.active
+         a.nav-link(href='#')
+           | Home 
+           span.sr-only (current)
+       li.nav-item
+         a.nav-link(href='#') Users
+  .container.pt-5
+   h3
+    span.mr-3 Users
+   a.btn.btn-primary(href="/users/create") Add New
+   .d-flex.align-items-center
+    form.ml-auto(action="/users/search", method="GET", class="d-flex", role="search")
+     input.form-control(name="q", type="text")
+     button(class="btn btn-primary ml-2") Search
+   br
+   table.table
+    tr
+     th Name
+     th Phone
+     th Action
+    each user in users
+     tr 
+      td= user.name
+      td= user.phone
+      td 
+       a(href="/users/" + user.id, class="btn btn-light") View
 
-  ul
-   each user in users
-    li
-     .row.ml-5.mr-5
-      span(style="margin: auto auto")= user.name
-      a(href="/users/" + user.id, class="btn btn-primary", role="button") View
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/js/bootstrap.min.js" integrity="sha384-7aThvCh9TypR7fIc2HV4O/nFMVCBwyIUKL8XCtKE+8xgCgl/PQGuFsvShjr74PBp" crossorigin="anonymous"></script>

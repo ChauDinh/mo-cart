@@ -1,141 +1,98 @@
 doctype html
-html
- head
-  meta(charset='UTF-8')
-  meta(name='viewport', content='width=device-width, initial-scale=1.0')
-  meta(http-equiv='X-UA-Compatible', content='ie=edge')
-  link(href='https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css', rel='stylesheet', integrity='sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS', crossorigin='anonymous')
-  link(rel='stylesheet', href='/css/style.css')
-  title MO.Cart - Powered by PSDFREEBIES.COM
- body
-  
-  .wrapper
-  .mocart__navbar
-    .support__link
-      .navbar__spacer
-      .contact__support contact & support:
-      .phone__number +1800 123455667
-      .contact__us contact us
-      .help help
-    .wrapper__with__search
-      a.wrapper__logo(href='/')
-        img(src='../../src/logo/logo.png', alt='logo', href="/")
-      .wrapper__search-section
-        .searchbar__main
-          form.searchbar-input(role='search', autocomplete='off', action="/search", method="GET")
-            input.searchbar-input__input(type='text', aria-label='Search entire store here...', maxlength='128', placeholder='Search entire store here...', value='', name="q")
-            button.btn.btn-solid-primary(type="submit")
-              img(src='../../src/images/search-button.png', alt='button-icon')
-      .wrapper__user-section
-        .user__account
-          img(src='../../src/images/account.png', alt='user-account')
-          div user account
-        .track__order
-          img(src='../../src/images/order.png', alt='track-order')
-          div track order
-        .login__register
-          img(src='../../src/images/login.png', alt='user-login')
-          div login
-        .wrapper__cart-section
-          .cart__icon
-            img(src='../../src/images/car.png', alt='cart-icon')
-          #cart__number-products.cart__number 0
-          .wrapper__cart-info
-            img(src='../../src/images/down-arrow.png', alt='cart-info')
-    .navi__header
-      .navi__chosing-type
-        .type__shopping Shop everything
-        img(src='../../src/images/down-arrow.png', alt='shop-type')
-      a.navi__fashion-store(href='') fashion store
-      a.navi__book-media(href='') book & media
-      a.navi__clearance-sale(href='') clearance sale
-      a.navi__mobile-phone(href='') mobile phones
-    .header__text-banner
-      .header__free-shipping
-        img(src='../../src/images/fly.png', alt='fly')
-        .banner__text-description
-          .banner__main-text free shipping
-          .banner__sub-text In Order Min $200
-      .header__days-returns
-        img(src='../../src/images/clock.png', alt='clock')
-        .banner__text-description
-          .banner__main-text 30-days returns
-          .banner__sub-text Money Back Guarantee
-      .header__support-fulltime
-        img(src='../../src/images/sos.png', alt='sos')
-        .banner__text-description
-          .banner__main-text 24/7 support
-          .banner__sub-text Lifestyme Support
-    // Banner and Deal Section
-  .banner__deal
-    .banner__deal-main
-      #carouselExampleIndicators.banner__carousel.carousel.slide(data-ride='carousel')
-        ol.carousel-indicators
-          li.active(data-target='#carouselExampleIndicators', data-slide-to='0')
-          li(data-target='#carouselExampleIndicators', data-slide-to='1')
-          li(data-target='#carouselExampleIndicators', data-slide-to='2')
-        .carousel-inner
-          .carousel-item.active
-            img.d-block.w-100(src='../../src/images/banner-1.jpeg', alt='First slide')
-          .carousel-item
-            img.d-block.w-100(src='../../src/images/banner-2.jpeg', alt='Second slide')
-          .carousel-item
-            img.d-block.w-100(src='../../src/images/banner-3.jpeg', alt='Third slide')
-        a.carousel-control-prev(href='#carouselExampleIndicators', role='button', data-slide='prev')
-          span.carousel-control-prev-icon(aria-hidden='true')
-          span.sr-only Previous
-        a.carousel-control-next(href='#carouselExampleIndicators', data-slide='next')
-          span.carousel-control-next-icon(aria-hidden='true')
-          span.sr-only Next
-    .banner__deal-today
-      .title__deal-today
-        | today's deals
-      .sub__deal-today
-        | end in
-      .coundown__deal-today
-        | 01:15:41
-      .picture__deal-today
-        img(src='../../src/images/pic-deal.jpg', alt='picture-deal-today')
-      .brand-name__deal-today
-        | Samsung 16GB MicroSD Class 6
-      .sale-info__deal-today
-        .sale-off__info
-          span $ 499
-          |  [30% off]
-        .sale-off__version $ 350
-  // End of Banner Section
-  // Quick Link Section
-  .section__quick-links
-    .title__quick-links Go quickly to
-    img.icon__quick-links(src='../../src/images/quick-link.png', alt='quick-link')
-    .mobiles__quick-links Mobiles
-    .space__quick-links :
-    .sports__quick-links Sports
-    .space__quick-links :
-    .tablets__quick-links Tablets
-    .space__quick-links :
-    .bath-towels__quick-links Bath Towels
-    .space__quick-links :
-    .led-bulbs__quick-links LED Bulbs
-    .space__quick-links :
-    .tv__quick-links TV
-    .space__quick-links :
-    .washing-machines__quick-links Washing Machines
-    .space__quick-links :
-    .laptops__quick-links Laptops
-    .space__quick-links :
-    .headphones__quick-links Headphones
-    .space__quick-links :
-    .fans__quick-links Fans
-    .space__quick-links :
-    .travel__quick-links Travel
-    .space__quick-links :
-    .books__quick-links Books
-  // End of Quick Links Section
-
-  script(src='../js/main.js')
-  script(src='https://code.jquery.com/jquery-3.3.1.slim.min.js', integrity='sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo', crossorigin='anonymous')
-  script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js', integrity='sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut', crossorigin='anonymous')
-  script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js', integrity='sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k', crossorigin='anonymous')
-          
-  block content
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    meta(http-equiv='X-UA-Compatible', content='ie=edge')
+    title Navigation Bar
+    link(rel='stylesheet', href='../../css/style.css')
+    link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css', integrity='sha384-PDle/QlgIONtM1aqA2Qemk5gPOE7wFq8+Em+G/hmo5Iq0CCmYZLv3fVRDJ4MMwEA', crossorigin='anonymous')
+  body
+    // Navs
+    ul.nav.justify-content-end.px-5
+      li.nav-item
+        p.text-wrap.mb-0.mt-2.px-3 contact & support:
+      li.nav-item
+        p.text-wrap.mb-0.mt-2.px-3.text-warning +1800 12345678
+      li.nav-item.mt-2 |
+      li.nav-item
+        a.nav-link(href='#') contact us
+      li.nav-item.mt-2 |
+      li.nav-item
+        a.nav-link(href='#') help
+    // Navbar
+    nav.navbar.navbar-expand-lg.px-5
+      a.navbar-brand(href='#')
+        img.d-inline-block.align-top(src='../../../src/logo/logo.png', alt='logo')
+      button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarSupportedContent', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Toggle navigation')
+        span.navbar-toggler-icon
+      #navbarSupportedContent.collapse.navbar-collapse
+        form.form-inline.searchField(action="/search", method="GET", role="search", autocomplete="off")
+          input.form-control.mr-sm-1(type='search', placeholder='Search entire store here', aria-label='Search', name="q")
+          button.btn.btn-primary.my-2.my-sm-0(type="submit")
+            img.mx-2(src='../../../src/images/search-button.png', alt='seach-button')
+        ul.navbar-nav.mr-auto
+          li.nav-item
+            img.rounded.mx-auto.d-block(src='../../../src/images/account.png', alt='account-user')
+            a.nav-link.py-0(href='#')
+              | my account 
+              span.sr-only (current)
+          li.nav-item.mt-2 |
+          li.nav-item
+            img.rounded.mx-auto.d-block(src='../../../src/images/order.png', alt='order')
+            a.nav-link.py-0(href='#') track order
+          li.nav-item.mt-2 |
+          li.nav-item.mr-3
+            img.rounded.mx-auto.d-block(src='../../../src/images/login.png', alt='login')
+            a.nav-link.py-0(href='#') login
+          .btn-group
+            button.btn.btn-danger.dropdown-toggle(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+              img.d-inline(src='../../../src/images/car.png', alt='car-button')
+              p.d-inline 0
+            .dropdown-menu.dropdown-menu-right
+              a.dropdown-item(href='#') product.name
+              a.dropdown-item(href='#') product.name
+              a.dropdown-item(href='#') product.name
+              .dropdown-divider
+              a.dropdown-item(href='#') total value: $0
+    // Navigation Area
+    nav.nav.navbar-expand-lg.navi.px-5
+      li.nav-item.my-2.mr-5
+        .btn-group
+          button.btn.btn-danger.dropdown-toggle(data-toggle='dropdown', aria-haspopup='true', aria-expanded='false') shop everything
+          .dropdown-menu
+            a.dropdown-item(href='#') product.name
+            a.dropdown-item(href='#') product.name
+            a.dropdown-item(href='#') product.name
+            .dropdown-divider
+            a.dropdown-item(href='#') total value: $0
+      li.nav-item.mt-2
+        a.nav-link(href='#') fashion store
+      li.nav-item.mt-2
+        a.nav-link(href='#') books & media
+      li.nav-item.mt-2
+        a.nav-link(href='#') clearance sale
+      li.nav-item.mt-2
+        a.nav-link(href='#') mobile phones
+    // Banners Text
+    ul.nav.justify-content-around.banner-text
+      li.nav-item
+        img.mb-3(src='../../../src/images/fly.png', alt='free-shipping')
+        .badge.text-wrap.mt-2
+          p.mb-1 free shipping
+          p.text-muted.text-capitalize In Order Min $200
+      li.nav-item
+        img.mb-3(src='../../../src/images/clock.png', alt='days-returns')
+        .badge.text-wrap.mt-2
+          p.mb-1 30-days-returns
+          p.text-muted.text-capitalize money back guarantee
+      li.nav-item
+        img.mb-3(src='../../../src/images/sos.png', alt='fulltime-support')
+        .badge.text-wrap.mt-2
+          p.mb-1 24/7 support
+          p.text-muted.text-capitalize lifestyme support
+    // Carousel
+    block content
+    script(src='https://code.jquery.com/jquery-3.3.1.slim.min.js', integrity='sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo', crossorigin='anonymous')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js', integrity='sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1', crossorigin='anonymous')
+    script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/js/bootstrap.min.js', integrity='sha384-7aThvCh9TypR7fIc2HV4O/nFMVCBwyIUKL8XCtKE+8xgCgl/PQGuFsvShjr74PBp', crossorigin='anonymous')

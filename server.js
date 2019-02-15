@@ -6,6 +6,9 @@ const db = require("./db");
 
 const userRoute = require("./routes/user.route");
 const productRoute = require("./routes/product.route");
+const authRoute = require("./routes/auth.route");
+
+const authMiddleware = require("./middlewares/auth.middleware");
 
 
 const app = express();
@@ -41,7 +44,8 @@ app.get("/search", (req, res) => {
 });
 
 app.use("/products", productRoute);
-app.use("/users", userRoute);
+app.use("/users", authMiddleware.requireAuth, userRoute);
+app.use("/auth", authRoute);
 
 app.listen(port, () => console.log(`The app is listening on port ${port}`));
 

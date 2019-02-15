@@ -2,58 +2,10 @@
   "users": [
     {
       "name": "Dinh Vo Bao Chau",
-      "phone": "1234567890",
-      "id": "moXvTgfEV"
-    },
-    {
-      "name": "Nguyen Dinh Ton Nu",
-      "phone": "099091900988",
-      "id": "YHUhGKhHW"
-    },
-    {
-      "name": "Eliza Hoang Kieu Anh",
-      "phone": "ui934512234",
-      "id": "07W4B1meV"
-    },
-    {
-      "name": "Dinh Vo Hoan My",
-      "phone": "09045112445",
-      "id": "bsXTnEGYe"
-    },
-    {
-      "name": "Amy Nguyen Le Hoai Anh",
-      "phone": "1243513242143",
-      "id": "TARU9bV8O"
-    },
-    {
-      "name": "Huynh Thi Minh Lich",
-      "phone": "909461923746913",
-      "id": "MwG7MUdK9"
-    },
-    {
-      "name": "",
-      "phone": "",
-      "id": "yYx74RqXy"
-    },
-    {
-      "name": "Phuong Uyen",
-      "phone": "8899837723",
-      "id": "6voQwNUkB"
-    },
-    {
-      "name": "abc",
-      "phone": "123456778",
-      "id": "zNvLqA4oV"
-    },
-    {
-      "name": "Hello",
-      "phone": "1212112323",
-      "id": "sZLtG4nku"
-    },
-    {
-      "name": "BAby",
-      "phone": "190238091284",
-      "id": "0D7-71DYl"
+      "phone": "0932872764",
+      "id": "TccJ4PcjB",
+      "email": "chaudvb95uc@gmail.com",
+      "password": "432f85b9ba6c2dccc067e8329cf520ff"
     }
   ],
   "products": [

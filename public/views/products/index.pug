@@ -2,12 +2,12 @@ extends ../layout/common.pug
 
 block content
   br
-  h1.ml-5.text-black-50 Products: #{search}
+  h3.ml-5.text-black-50 Products: #{search}
   hr.ml-5.mr-5
   br
   .card-columns.ml-5.mr-5
    each product in products
-    .card
+    .card.shadow-sm.p-3.mb-5.bg-white.rounded
      img(src=product.image, alt=product.id, class="card-img-top rounded mx-auto d-block", style="max-width: 200px; margin-top: .8rem")
      .card-body
       h5.card-title(style="text-align: center")= product.name

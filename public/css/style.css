@@ -1,5 +1,5 @@
 body {
- background-color: #e0e0e0 !important;
+ background-color: #fff !important;
  /* text-transform: uppercase !important; */
  outline: none !important;
 }
@@ -56,8 +56,8 @@ p {
 }
 
 .banner-text {
- background-color: #fff;
- color: #333;
+ background-color: #e5edf4;
+ color: #000;
  font-weight: lighter;
  padding-top: .5rem;
  padding-bottom: 0rem;

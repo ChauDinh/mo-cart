@@ -1,3 +1,7 @@
+require("dotenv").config();
+
+console.log(process.env.SESSION_SECRET);
+
 const express = require("express");
 const path = require("path");
 const bodyParser = require("body-parser");
@@ -19,7 +23,7 @@ app.set('view engine', 'pug');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(cookieParser());
+app.use(cookieParser(process.env.SESSION_SECRET));
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname)));

@@ -4,7 +4,8 @@ html(lang='en')
     meta(charset='UTF-8')
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
     meta(http-equiv='X-UA-Compatible', content='ie=edge')
-    title Navigation Bar
+    title MO.Cart | By Human, For Human
+    link(rel='icon', href="../../../src/logo/icon.png", type="image/ico")
     link(rel='stylesheet', href='../../css/style.css')
     link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css', integrity='sha384-PDle/QlgIONtM1aqA2Qemk5gPOE7wFq8+Em+G/hmo5Iq0CCmYZLv3fVRDJ4MMwEA', crossorigin='anonymous')
   body
@@ -21,8 +22,8 @@ html(lang='en')
       li.nav-item
         a.nav-link(href='#') help
     // Navbar
-    nav.navbar.navbar-expand-lg.px-5
-      a.navbar-brand(href='#')
+    nav.navbar.navbar-expand-lg.px-5.navbar-light
+      a.navbar-brand(href='/')
         img.d-inline-block.align-top(src='../../../src/logo/logo.png', alt='logo')
       button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarSupportedContent', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Toggle navigation')
         span.navbar-toggler-icon
@@ -34,14 +35,13 @@ html(lang='en')
         ul.navbar-nav.mr-auto
           li.nav-item
             img.rounded.mx-auto.d-block(src='../../../src/images/account.png', alt='account-user')
-            a.nav-link.py-0(href='#')
-              | my account 
+            a.nav-link.py-0(href='#') my account 
               span.sr-only (current)
-          li.nav-item.mt-2 |
+          li.nav-item.mt-2 
           li.nav-item
             img.rounded.mx-auto.d-block(src='../../../src/images/order.png', alt='order')
             a.nav-link.py-0(href='#') track order
-          li.nav-item.mt-2 |
+          li.nav-item.mt-2 
           li.nav-item.mr-3
             img.rounded.mx-auto.d-block(src='../../../src/images/login.png', alt='login')
             a.nav-link.py-0(href='#') login
@@ -75,7 +75,7 @@ html(lang='en')
       li.nav-item.mt-2
         a.nav-link(href='#') mobile phones
     // Banners Text
-    ul.nav.justify-content-around.banner-text
+    ul.nav.justify-content-around.banner-text.px-5
       li.nav-item
         img.mb-3(src='../../../src/images/fly.png', alt='free-shipping')
         .badge.text-wrap.mt-2

@@ -4,15 +4,28 @@ block content
   br
   h3.ml-5.text-black-50 Products: #{search}
   hr.ml-5.mr-5
-  br
+  nav.mr-5(arial-label="Page navigation example")
+   ul.pagination.justify-content-end
+    li.page-item
+     a.page-link(href="#", arial-label="Previous")
+      span(arial-hidden="true") &laquo;
+    li.page-item
+     a.page-link(href="/products/?page=1") 1
+    li.page-item
+     a.page-link(href="/products/?page=2") 2
+    li.page-item
+     a.page-link(href="/products/?page=3") 3
+    li.page-item
+     a.page-link(href="#", arial-label="Next")
+      span(arial-hidden="true") &raquo;
   .card-columns.ml-5.mr-5
    each product in products
-    .card.shadow-sm.p-3.mb-5.bg-white.rounded
-     img(src=product.image, alt=product.id, class="card-img-top rounded mx-auto d-block", style="max-width: 200px; margin-top: .8rem")
+    .card.shadow-sm.mb-5.bg-white.rounded
+     img(src=product.image, alt=product.id, class="card-img-top img-fluid")
      .card-body
       h5.card-title(style="text-align: center")= product.name
-      .row.no-gutters.ml-3.mr-3
-       h6(style="font-size: 1.5rem; margin: auto auto" class="float-left text-primary") $9.99
-       a(href="/products/" + product.id, class="btn btn-primary" role="button") View Product
+      .d-flex.justify-content-between
+        a(href="/products/" + product.id, class="btn btn-outline-info stretched-link", role="button") View Product
+        a(href="#", class="btn btn-info stretched-link", role="button") Add To Cart
      .card-footer
-      small.text-muted Last updated 3 days ago
+      small.text-info(style="font-size: 1.3rem;") $ 9.99

@@ -1,8 +1,13 @@
 const db = require("../db");
 
 module.exports.server = function(req, res) {
+ let page = parseInt(req.query.page) || 1;
+ let perPage = 9;
+
+ let start = (page-1)*perPage;
+ let end = page*perPage;
  res.render('products/index.pug', {
-  products: db.get("products").value()
+  products: db.get("products").value().slice(start, end)
  });
 };
 

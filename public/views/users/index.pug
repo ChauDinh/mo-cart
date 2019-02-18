@@ -29,11 +29,14 @@ html
    br
    table.table
     tr
+     th Avatar
      th Name
      th Phone
      th Action
     each user in users
      tr 
+      td 
+        img(src=user.avatar, width=64)
       td= user.name
       td= user.phone
       td 

@@ -11,9 +11,10 @@ const db = require("./db");
 const userRoute = require("./routes/user.route");
 const productRoute = require("./routes/product.route");
 const authRoute = require("./routes/auth.route");
+const cartRoute = require("./routes/cart.route");
 
 const authMiddleware = require("./middlewares/auth.middleware");
-
+const sessionMiddleware = require("./middlewares/session.middleware");
 
 const app = express();
 const port = 8080;
@@ -24,6 +25,7 @@ app.set('view engine', 'pug');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser(process.env.SESSION_SECRET));
+app.use(sessionMiddleware);
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname)));
@@ -60,6 +62,7 @@ app.get("/search", (req, res) => {
 app.use("/products", productRoute);
 app.use("/users", authMiddleware.requireAuth, userRoute);
 app.use("/auth", authRoute);
+app.use("/cart", cartRoute);
 
 app.listen(port, () => console.log(`The app is listening on port ${port}`));
 

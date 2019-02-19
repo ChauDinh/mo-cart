@@ -1,0 +1,16 @@
+extends ../layout/common.pug
+
+block content
+ .container
+  h2.mt-5 New Transfer
+
+  form(method="POST")
+   .form-group
+    label(for="account") Account
+    input#account(name="accountId", type="text").form-control
+
+   .form-group 
+    label(for="amount") Amount
+    input#amount(name="amount", type="number").form-control
+
+   button.btn.btn-primary(type="submit") Transfer

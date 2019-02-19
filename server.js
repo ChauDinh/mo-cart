@@ -63,6 +63,7 @@ app.use("/products", productRoute);
 app.use("/users", authMiddleware.requireAuth, userRoute);
 app.use("/auth", authRoute);
 app.use("/cart", cartRoute);
+app.use("/", sessionMiddleware);
 
 app.listen(port, () => console.log(`The app is listening on port ${port}`));
 

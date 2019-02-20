@@ -6,6 +6,7 @@ const express = require("express");
 const path = require("path");
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
+const csurf = require("csurf");
 const db = require("./db");
 
 const userRoute = require("./routes/user.route");
@@ -27,6 +28,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser(process.env.SESSION_SECRET));
 app.use(sessionMiddleware);
+app.use(csurf({ cookie: true }));
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname)));
@@ -65,7 +67,7 @@ app.use("/users", authMiddleware.requireAuth, userRoute);
 app.use("/auth", authRoute);
 app.use("/cart", cartRoute);
 app.use("/", sessionMiddleware);
-app.use("/transfer", authMiddleware.requireAuth, transferRoute);
+app.use("/transfer", transferRoute);
 
 app.listen(port, () => console.log(`The app is listening on port ${port}`));
 

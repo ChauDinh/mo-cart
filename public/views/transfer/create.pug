@@ -5,6 +5,7 @@ block content
   h2.mt-5 New Transfer
 
   form(method="POST")
+   input(type="hidden", name="_csrf", value=csrfToken)
    .form-group
     label(for="account") Account
     input#account(name="accountId", type="text").form-control

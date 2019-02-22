@@ -32,5 +32,4 @@ module.exports.addToCart = function(req, res, next) {
  // let productNumber = db.get("sessions").find({ id: sessionId }).size().value();
 
  // res.locals.productNumber = productNumber;
- res.locals.productNumber = db.get("sessions").find({ id: sessionId }).size().value();
 };

@@ -19,17 +19,23 @@ module.exports = function(req, res, next) {
  let productNumber = db.get("sessions").find({ id: sessionSignedId }).get("cart").size().value();
  res.locals.productNumber = productNumber;
 
- // let productIdArray = Object.keys(db.get("sessions").find({ id: sessionSignedId }).get("cart").value());
- // res.locals.productIdArray = productIdArray;
+ let productIdArray = Object.keys(db.get("sessions").find({ id: sessionSignedId }).get("cart").value() || []);
+ res.locals.productIdArray = productIdArray;
  
- // let productNameArray = [];
- // for (let i = 0; i < productIdArray.length; i++) {
- //  productNameArray += Array.from(db.get("products").find({ id: productIdArray[i] }).get("name").value());
- // }
- // res.locals.productNameArray = productNameArray;
+ let productNameArray = [];
+ productIdArray.forEach(element => {
+  productNameArray.push(db.get("products").find({ id: element }).get("name").value() || "");
+ });
+ res.locals.productNameArray = productNameArray;
 
- // let productNumberArray = Object.values(db.get("sessions").find({ id: sessionSignedId }).get("cart").value());
- // res.locals.productNumberArray = productNumberArray;
+ let productNumberArray = Object.values(db.get("sessions").find({ id: sessionSignedId }).get("cart").value() || "");
+ res.locals.productNumberArray = productNumberArray;
+
+ let count = 0;
+ productNumberArray.forEach(element => {
+  count = count + parseInt(element);
+ })
+ res.locals.count = count;
 
  next();
 };

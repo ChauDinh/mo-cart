@@ -8,6 +8,9 @@ const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 const csurf = require("csurf");
 const db = require("./db");
+const mongoose = require("mongoose");
+
+mongoose.connect(process.env.MONGO_URL);
 
 const userRoute = require("./routes/user.route");
 const productRoute = require("./routes/product.route");
@@ -35,7 +38,7 @@ app.use(express.static(path.join(__dirname)));
 
 app.get("/", (req, res) => {
  let page = parseInt(req.query.page) || 1; 
- let perPage = 9;
+ let perPage = 6;
 
  let start = (page-1)*perPage;
  let end = page*perPage;
@@ -66,7 +69,6 @@ app.use("/products", productRoute);
 app.use("/users", authMiddleware.requireAuth, userRoute);
 app.use("/auth", authRoute);
 app.use("/cart", cartRoute);
-app.use("/", sessionMiddleware);
 app.use("/transfer", transferRoute);
 
 app.listen(port, () => console.log(`The app is listening on port ${port}`));

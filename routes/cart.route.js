@@ -1,10 +1,9 @@
 const express = require("express");
-const sessionMiddleware = require("../middlewares/session.middleware");
 
 const controller = require("../controllers/cart.controller");
 
 const router = express.Router();
 
-router.get("/add/:productId", sessionMiddleware, controller.addToCart);
+router.get("/add/:productId", controller.addToCart);
 
 module.exports = router;

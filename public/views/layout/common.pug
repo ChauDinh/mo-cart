@@ -48,15 +48,15 @@ html(lang='en')
           .btn-group
             button.btn.btn-danger.dropdown-toggle(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
               img.d-inline(src='../../../src/images/car.png', alt='car-button')
-              p.d-inline.ml-1= countCart
+              p.d-inline.ml-1= productNumber
             .dropdown-menu.dropdown-menu-right
               .d-flex
-                ul
-                  each val in productIdArray
-                    li.dropdown-item= val
-                ul 
-                  each val in productNumberArray
-                    li.dropdown-item= val
+                //- ul
+                //-   each val in productIdArray
+                //-     li.dropdown-item= val
+                //- ul 
+                //-   each val in productNumberArray
+                //-     li.dropdown-item= val
               .dropdown-divider
               a.dropdown-item(href='#') total value: $0
     // Navigation Area

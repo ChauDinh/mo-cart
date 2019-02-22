@@ -2,7 +2,7 @@ const db = require("../db");
 
 module.exports.server = function(req, res) {
  let page = parseInt(req.query.page) || 1;
- let perPage = 9;
+ let perPage = 6;
 
  let start = (page-1)*perPage;
  let end = page*perPage;
@@ -24,11 +24,13 @@ module.exports.search = function(req, res) {
  });
 };
 
-module.exports.get = function(req, res) {
+module.exports.get = function(req, res, next) {
  let id = parseInt(req.params.id);
  let product = db.get("products").find({ id: id }).value();
  
  res.render("product/index", {
   product: product
  });
+
+ next();
 };

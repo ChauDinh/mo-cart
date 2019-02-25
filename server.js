@@ -31,7 +31,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser(process.env.SESSION_SECRET));
 app.use(sessionMiddleware);
-app.use(csurf({ cookie: true }));
+// app.use(csurf({ cookie: true }));
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname)));
@@ -69,7 +69,7 @@ app.use("/products", productRoute);
 app.use("/users", authMiddleware.requireAuth, userRoute);
 app.use("/auth", authRoute);
 app.use("/cart", cartRoute);
-app.use("/transfer", transferRoute);
+app.use("/transfer", authMiddleware.requireAuth, transferRoute);
 
 app.listen(port, () => console.log(`The app is listening on port ${port}`));
 

@@ -1,17 +1,29 @@
 extends ../layout/common.pug 
 
 block content
- h1.ml-5 View product
  br
  br
- .card.mb-3.mx-auto(style="max-width: 540px; padding: .5rem 1rem;")
+ .card.mb-3.mx-auto(style="max-width: 960px; padding: .5rem 1rem; border: none")
   .row.no-gutters
    .col-md-4
-    img(src=product.image, class="card-img" alt=product.id)
+    img(src= product.image, class="card-img", alt=product.id, style="height: 400px; width: 280px;")
    .col-md-8
     .card-body
-     h5= product.name
-     p.card-text= product.description
-     p.card-text
-      small.text-muted Last update 3 days ago
+     p(style="font-size: 1.3rem; font-weight: 300")= product.name
+     hr(style="border: none; height: 2px; background-color: rgba(0, 0, 0, 0.1);")
+     p(style="font-weight: 300")= "Description: " + product.description
+     br
+     p(style="font-weight: 300") Availability: 
+      span(style="color: green") In Stock
+     hr(style="border: none; height: 2px; background-color: rgba(0, 0, 0, 0.1);")
+     a(href="/cart/add/" + product.id, class="btn btn-info", role="button") Add To Cart
+     br
+     br
+     p(style="font-size: 1.3rem;") Share: 
+      i.fab.fa-facebook-f(style="margin-right: 10px; font-size: 1.2rem;")
+      i.fab.fa-instagram(style="margin-right: 10px; font-size: 1.2rem")
+      i.fab.fa-github(style="margin-right: 10px; font-size: 1.2rem")
+      i.fab.fa-google(style="margin-right: 10px; font-size: 1.2rem")
+     //- p.card-text
+     //-  small.text-muted Last update 3 days ago
  

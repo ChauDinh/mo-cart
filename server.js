@@ -37,7 +37,7 @@ app.use(express.static(path.join(__dirname)));
 
 app.get("/", (req, res) => {
  let page = parseInt(req.query.page) || 1; 
- let perPage = 6;
+ let perPage = 10;
 
  let start = (page-1)*perPage;
  let end = page*perPage;
@@ -49,7 +49,7 @@ app.get("/", (req, res) => {
 app.get("/search", (req, res) => {
  let q = req.query.q;
  let page = parseInt(req.query.page) || 1;
- let perPage = 9;
+ let perPage = 10;
 
  let start = (page-1)*perPage;
  let end = page*perPage;
@@ -64,8 +64,16 @@ app.get("/search", (req, res) => {
  })
 });
 
+app.get("/:id", (req, res) => {
+ let id = req.params.id;
+ let product = db.get("products").find({ id: id }).value();
+ res.render("product/index", {
+  product: product
+ });
+})
+
 app.use("/products", productRoute);
-app.use("/users", authMiddleware.requireAuth, userRoute);
+app.use("/users", userRoute);
 app.use("/auth", authRoute);
 app.use("/cart", cartRoute);
 app.use("/transfer", authMiddleware.requireAuth, csurf({ cookie: true }), transferRoute);

@@ -1,8 +1,8 @@
 extends ../layout/common.pug
 
 block content
- .container
-  h2.mt-5 New Transfer
+ .container(style="max-width: 540px")
+  h1(style="font-weight: 300").mt-5 Transfer Form
 
   form(method="POST")
    input(type="hidden", name="_csrf", value=csrfToken)
@@ -14,4 +14,13 @@ block content
     label(for="amount") Amount
     input#amount(name="amount", type="number").form-control
 
-   button.btn.btn-primary(type="submit") Transfer
+   .payment-info
+    .form-group.credit__card
+     label(for="card-number") Card Number
+     input#card-number(type="number", name="card-number").form-control
+
+    .form-group
+     label(for="cvc-number") CVC
+     input#cvc-number(type="number", name="cvc-number").form-control
+
+   button.btn.btn-primary(type="submit", style="margin-bottom: 35px") Transfer

@@ -8,6 +8,7 @@ html(lang='en')
     link(rel='icon', href="../../../src/logo/icon.png", type="image/ico")
     link(rel='stylesheet', href='../../css/style.css')
     link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css', integrity='sha384-PDle/QlgIONtM1aqA2Qemk5gPOE7wFq8+Em+G/hmo5Iq0CCmYZLv3fVRDJ4MMwEA', crossorigin='anonymous')
+    link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous")
   body
     // Navs
     ul.nav.justify-content-end.px-5
@@ -34,17 +35,17 @@ html(lang='en')
             img.mx-2(src='../../../src/images/search-button.png', alt='seach-button')
         ul.navbar-nav.mr-auto
           li.nav-item
-            img.rounded.mx-auto.d-block(src='../../../src/images/account.png', alt='account-user')
-            a.nav-link.py-0(href='#') my account 
+            //- img.rounded.mx-auto.d-block(src='../../../src/images/account.png', alt='account-user')
+            //- a.nav-link.py-0(href='users' + userId) my account 
               span.sr-only (current)
           li.nav-item.mt-2 
           li.nav-item
             img.rounded.mx-auto.d-block(src='../../../src/images/order.png', alt='order')
-            a.nav-link.py-0(href='#') track order
+            a.nav-link.py-0(href='/transfer/create') track order
           li.nav-item.mt-2 
           li.nav-item.mr-3
             img.rounded.mx-auto.d-block(src='../../../src/images/login.png', alt='login')
-            a.nav-link.py-0(href='#') login
+            a.nav-link.py-0(href='/auth/login') login
           .btn-group
             button.btn.btn-danger.dropdown-toggle(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
               img.d-inline(src='../../../src/images/car.png', alt='car-button')
@@ -58,7 +59,7 @@ html(lang='en')
                   each val in productNumberArray
                     li.dropdown-item= val
               .dropdown-divider
-              a.dropdown-item(href='#') total value: $0
+              a.dropdown-item(href='#') total value (Discounted!): $#{Math.floor(count*9.99)}
     // Navigation Area
     nav.nav.navbar-expand-lg.navi.px-5
       li.nav-item.my-2.mr-5
@@ -96,7 +97,42 @@ html(lang='en')
           p.mb-1 24/7 support
           p.text-muted.text-capitalize lifestyme support
     // Carousel
+    .carousel
+      .main-carousel
+        #carouselExampleIndicators.carousel.slide(data-ride='carousel')
+          ol.carousel-indicators
+            li.active(data-target='#carouselExampleIndicators', data-slide-to='0')
+            li(data-target='#carouselExampleIndicators', data-slide-to='1')
+            li(data-target='#carouselExampleIndicators', data-slide-to='2')
+          .carousel-inner
+            .carousel-item.active
+              img.d-block.w-100(src='../../../src/images/banner-1.jpg', alt='...')
+            .carousel-item
+              img.d-block.w-100(src='../../../src/images/banner-2.jpg', alt='...')
+            .carousel-item
+              img.d-block.w-100(src='../../../src/images/banner-3.jpg', alt='...')
+          a.carousel-control-prev(href='#carouselExampleIndicators', role='button', data-slide='prev')
+            span.carousel-control-prev-icon(aria-hidden='true')
+            span.sr-only Previous
+          a.carousel-control-next(href='#carouselExampleIndicators', role='button', data-slide='next')
+            span.carousel-control-next-icon(aria-hidden='true')
+            span.sr-only Next
+      .flash-sale
+        .sale-img
+          img(src="../../../src/images/sale.jpg", alt="", style="max-width: 300px")
+
     block content
-    script(src='https://code.jquery.com/jquery-3.3.1.slim.min.js', integrity='sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo', crossorigin='anonymous')
-    script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js', integrity='sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1', crossorigin='anonymous')
-    script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/js/bootstrap.min.js', integrity='sha384-7aThvCh9TypR7fIc2HV4O/nFMVCBwyIUKL8XCtKE+8xgCgl/PQGuFsvShjr74PBp', crossorigin='anonymous')
+
+    footer 
+      .footer-title
+        span 
+          i.fab.fa-github-alt
+        p 
+          | Thanks to: 
+          span Coders
+          | .Tokyo
+      .something
+        p Create by Chau Dinh &copy; 2018-2019 Mo.Cart and individual contributors. Content is available under ISC licenses.
+  script(src='https://code.jquery.com/jquery-3.3.1.slim.min.js', integrity='sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo', crossorigin='anonymous')
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js', integrity='sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1', crossorigin='anonymous')
+  script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/js/bootstrap.min.js', integrity='sha384-7aThvCh9TypR7fIc2HV4O/nFMVCBwyIUKL8XCtKE+8xgCgl/PQGuFsvShjr74PBp', crossorigin='anonymous')

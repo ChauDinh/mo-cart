@@ -29,13 +29,21 @@ html
      label(for="name") Name
      input#name(name="name", type="text", value=values ? values.name : "").form-control
 
+    .form-group
+      label(for="email") Email
+      input#email(type="email", name="email", value=values ? values.email : "").form-control
+    
+    .form-group
+      label(for="password") Password
+      input#password(type="password", name="password", value=values ? values.password : "").form-control
+
     .form-group 
      label(for="phone") Phone
      input#phone(name="phone", type="text", value=values ? values.phone : "").form-control
 
-    .form-group
-     label(for="avatar") Avatar
-     input#avatar(name="avatar", type="file").form-control-file
+    //- .form-group
+    //-  label(for="avatar") Avatar
+    //-  input#avatar(name="avatar", type="file").form-control-file
 
     button.btn.btn-primary(type="submit") Create
 

@@ -2,7 +2,7 @@ extends ../layout/common.pug
 
 block content
   br
-  h3.ml-5.text-black-50 Products: #{search}
+  h3.ml-5.text-black-50(style="font-weight: 300; text-shadow: none") Products: #{search}
   hr.ml-5.mr-5
   p= productId
   nav.mr-5(arial-label="Page navigation example")
@@ -19,14 +19,18 @@ block content
     li.page-item
      a.page-link(href="#", arial-label="Next")
       span(arial-hidden="true") &raquo;
-  .card-columns.ml-5.mr-5
+  .gallery.ml-5.mr-5
    each product in products
-    .card.shadow-sm.mb-5.bg-white.rounded
-     img(src=product.image, alt=product.id, class="card-img-top img-fluid")
-     .card-body
-      h5.card-title(style="text-align: center")= product.name
-      .d-flex.justify-content-between
-        a(href="/products/" + product.id, class="btn btn-outline-info stretched-link", role="button") View Product
-        a(href="/cart/add/" + product.id, class="btn btn-info stretched-link", role="button") Add To Cart
-     .card-footer
-      small.text-info(style="font-size: 1.3rem;") $ 9.99
+    .card.mb-4.bg-white.rounded(style="width: 15rem; height: 22rem")
+      a(href="/" + product.id)
+        img(src=product.image, alt=product.id, class="card-img-top img-fluid", style="height: 22rem")
+        .details
+          h6(style="font-weight: 300")= product.name
+          p(style="font-weight: 300")= "$" + product.price
+    //-  .card-body
+    //-   p.card-title(style="text-align: center")= product.name
+      //- .d-flex.justify-content-between
+     
+        //- a(href="/cart/add/" + product.id, class="btn btn-info stretched-link", role="button") Add To Cart
+    //-  .card-footer
+    //-   small.text-info(style="font-size: 1.3rem;") $ 9.99

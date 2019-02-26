@@ -25,7 +25,7 @@ module.exports.search = function(req, res) {
 };
 
 module.exports.get = function(req, res, next) {
- let id = parseInt(req.params.id);
+ let id = req.params.id;
  let product = db.get("products").find({ id: id }).value();
  
  res.render("product/index", {

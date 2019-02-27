@@ -1,6 +1,25 @@
 extends ../layout/common.pug
 
 block content
+  .banner-carousel
+    #carouselExampleControls.carousel.slide(data-ride='carousel', style="width: 660px;")
+      .carousel-inner
+        .carousel-item.active
+          img.d-block.w-100(src='../../../src/images/banner-1.jpg', alt='...')
+        .carousel-item
+          img.d-block.w-100(src='../../../src/images/banner-2.jpg', alt='...')
+        .carousel-item
+          img.d-block.w-100(src='../../../src/images/banner-3.jpg', alt='...')
+      a.carousel-control-prev(href='#carouselExampleControls', role='button', data-slide='prev')
+        span.carousel-control-prev-icon(aria-hidden='true')
+        span.sr-only Previous
+      a.carousel-control-next(href='#carouselExampleControls', role='button', data-slide='next')
+        span.carousel-control-next-icon(aria-hidden='true')
+        span.sr-only Next
+    #flash-sale(style="width: 330px; margin-left: 15px")
+      .sale-product
+        img(src="../../../src/images/sale.jpg", alt="", style="height: 360px; border: 3px solid #fff")
+
   br
   h3.ml-5.text-black-50(style="font-weight: 300; text-shadow: none") Products: #{search}
   hr.ml-5.mr-5

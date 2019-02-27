@@ -4,18 +4,19 @@ block content
   br
   h3.ml-5.text-black-50(style="font-weight: 300; text-shadow: none") Products: #{search}
   hr.ml-5.mr-5
-  p= productId
+  //- p= productId
   nav.mr-5(arial-label="Page navigation example")
    ul.pagination.justify-content-end
     li.page-item
      a.page-link(href="#", arial-label="Previous")
       span(arial-hidden="true") &laquo;
-    li.page-item
-     a.page-link(href="/?page=1") 1
-    li.page-item
-     a.page-link(href="/?page=2") 2
-    li.page-item
-     a.page-link(href="/?page=3") 3
+    each page in numPageArray
+      li.page-item
+      a.page-link(href="/?page="+parseInt(page+1))= page+1
+    //- li.page-item
+    //-  a.page-link(href="/?page=2") 2
+    //- li.page-item
+    //-  a.page-link(href="/?page=3") 3
     li.page-item
      a.page-link(href="#", arial-label="Next")
       span(arial-hidden="true") &raquo;
@@ -25,8 +26,8 @@ block content
       a(href="/" + product.id)
         img(src=product.image, alt=product.id, class="card-img-top img-fluid", style="height: 22rem")
         .details
-          h6(style="font-weight: 300")= product.name
-          p(style="font-weight: 300")= "$" + product.price
+          h6(style="font-weight: lighter; font-family: 'Satisfy', cursive;")= product.name
+          p(style="font-weight: 300; font-family: 'Satisfy', cursive; font-size: 1.2rem")= "$" + product.price
     //-  .card-body
     //-   p.card-title(style="text-align: center")= product.name
       //- .d-flex.justify-content-between

@@ -41,8 +41,15 @@ app.get("/", (req, res) => {
 
  let start = (page-1)*perPage;
  let end = page*perPage;
+ let products = db.get("products").value().slice(start, end)
+ let numPage = Math.ceil(db.get("products").value().length / perPage);
+ let numPageArray = []
+ for (let i = 0; i < numPage; i++) {
+  numPageArray.push(i);
+ }
  res.render('index', {
-  products: db.get("products").value().slice(start, end)
+  products: products,
+  numPageArray: numPageArray
  });
 });
 
@@ -56,11 +63,16 @@ app.get("/search", (req, res) => {
  let products = db.get("products").value().slice(start, end);
  let matchedProducts = products.filter(product => {
   return product.name.toLowerCase().indexOf(q.toLowerCase()) !== -1;
- })
-
+ });
+ let numPage = Math.ceil(matchedProducts.length / perPage);
+ let numPageArray = [];
+ for (let i = 0; i < numPage; i++) {
+  numPageArray.push(i);
+ }
  res.render('products/index', {
   products: matchedProducts,
-  search: q
+  search: q,
+  numPageArray: numPageArray
  })
 });
 

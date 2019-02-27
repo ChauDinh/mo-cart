@@ -97,30 +97,6 @@ html(lang='en')
           p.mb-1 24/7 support
           p.text-muted.text-capitalize lifestyme support
     // Carousel
-    .carousel
-      .main-carousel
-        #carouselExampleIndicators.carousel.slide(data-ride='carousel')
-          ol.carousel-indicators
-            li.active(data-target='#carouselExampleIndicators', data-slide-to='0')
-            li(data-target='#carouselExampleIndicators', data-slide-to='1')
-            li(data-target='#carouselExampleIndicators', data-slide-to='2')
-          .carousel-inner
-            .carousel-item.active
-              img.d-block.w-100(src='../../../src/images/banner-1.jpg', alt='...')
-            .carousel-item
-              img.d-block.w-100(src='../../../src/images/banner-2.jpg', alt='...')
-            .carousel-item
-              img.d-block.w-100(src='../../../src/images/banner-3.jpg', alt='...')
-          a.carousel-control-prev(href='#carouselExampleIndicators', role='button', data-slide='prev')
-            span.carousel-control-prev-icon(aria-hidden='true')
-            span.sr-only Previous
-          a.carousel-control-next(href='#carouselExampleIndicators', role='button', data-slide='next')
-            span.carousel-control-next-icon(aria-hidden='true')
-            span.sr-only Next
-      .flash-sale
-        .sale-img
-          img(src="../../../src/images/sale.jpg", alt="", style="max-width: 300px")
-
     block content
 
     footer 

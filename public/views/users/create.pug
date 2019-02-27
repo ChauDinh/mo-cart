@@ -2,50 +2,51 @@ doctype html
 html
  head
  link(rel="stylesheet", href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css", integrity="sha384-PDle/QlgIONtM1aqA2Qemk5gPOE7wFq8+Em+G/hmo5Iq0CCmYZLv3fVRDJ4MMwEA", crossorigin="anonymous")
+ link(rel="stylesheet", href="../../css/signup.css")
  body
 
 
-  nav.navbar.navbar-expand-lg.navbar-light.bg-light
-     a.navbar-brand(href='#') MO.Cart
-     button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarNav', aria-controls='navbarNav', aria-expanded='false', aria-label='Toggle navigation')
-       span.navbar-toggler-icon
-     #navbarNav.collapse.navbar-collapse
-       ul.navbar-nav
-         li.nav-item.active
-           a.nav-link(href='#')
-             | Home 
-             span.sr-only (current)
-         li.nav-item
-           a.nav-link(href='#') Users
-  .container
-   h1.pt-5 Create User
+  //- nav.navbar.navbar-expand-lg.navbar-light.bg-light
+  //-    a.navbar-brand(href='#') MO.Cart
+  //-    button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarNav', aria-controls='navbarNav', aria-expanded='false', aria-label='Toggle navigation')
+  //-      span.navbar-toggler-icon
+  //-    #navbarNav.collapse.navbar-collapse
+  //-      ul.navbar-nav
+  //-        li.nav-item.active
+  //-          a.nav-link(href='#')
+  //-            | Home 
+  //-            span.sr-only (current)
+  //-        li.nav-item
+  //-          a.nav-link(href='#') Users
+  .container(style="width: 540px")
+   h2(style="margin-left: 35px; color: #fff; font-weight: 300;") Welcome to MO.Cart Shopping
 
    if errors
     each error in errors
       .alert.alert-danger= error
 
    form(action="/users/create", method="POST", enctype="multipart/form-data")
-    .form-group
+    .input-group
+     input#name(name="name", type="text", value=values ? values.name : "")
      label(for="name") Name
-     input#name(name="name", type="text", value=values ? values.name : "").form-control
 
-    .form-group
+    .input-group
+      input#email(type="email", name="email", value=values ? values.email : "")
       label(for="email") Email
-      input#email(type="email", name="email", value=values ? values.email : "").form-control
     
-    .form-group
+    .input-group
+      input#password(type="password", name="password", value=values ? values.password : "")
       label(for="password") Password
-      input#password(type="password", name="password", value=values ? values.password : "").form-control
 
-    .form-group 
+    .input-group 
+     input#phone(name="phone", type="text", value=values ? values.phone : "")
      label(for="phone") Phone
-     input#phone(name="phone", type="text", value=values ? values.phone : "").form-control
 
     //- .form-group
     //-  label(for="avatar") Avatar
     //-  input#avatar(name="avatar", type="file").form-control-file
 
-    button.btn.btn-primary(type="submit") Create
+    button.btn.btn-primary(type="submit", style="outline: none;") Sign Up
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>

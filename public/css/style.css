@@ -223,6 +223,6 @@ footer .something {
  justify-content: center;
  margin-top: 1rem;
  background-image: url("../../src/images/background-banner.png");
- background-size: cover;
+ /* background-size: cover; */
 }
 

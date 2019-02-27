@@ -51,7 +51,7 @@ html(lang='en')
               img.d-inline(src='../../../src/images/car.png', alt='car-button')
               p.d-inline.ml-1= count
             .dropdown-menu.dropdown-menu-right
-              .d-flex
+              .d-flex(style="font-family: Roboto, sans-serif; text-transform: none; font-size: 1rem;")
                 ul
                   each val in productNameArray
                     li.dropdown-item= val
@@ -59,7 +59,7 @@ html(lang='en')
                   each val in productNumberArray
                     li.dropdown-item= val
               .dropdown-divider
-              a.dropdown-item(href='#') total value (Discounted!): $#{Math.floor(count*9.99)}
+              a.dropdown-item(href='#', style="margin-left: 54%") total value (Discounted!): $#{Math.floor(count*9.99)}
     // Navigation Area
     nav.nav.navbar-expand-lg.navi.px-5
       li.nav-item.my-2.mr-5

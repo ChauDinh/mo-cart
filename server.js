@@ -36,25 +36,37 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname)));
 
 app.get("/", (req, res) => {
+ // All Products Pagination
  let page = parseInt(req.query.page) || 1; 
  let perPage = 10;
 
  let start = (page-1)*perPage;
  let end = page*perPage;
- let products = db.get("products").value().slice(start, end)
+ let products = db.get("products").value().slice(start, end);
  let numPage = Math.ceil(db.get("products").value().length / perPage);
- let numPageArray = []
+ let numPageArray = [];
  for (let i = 0; i < numPage; i++) {
   numPageArray.push(i);
  }
+
+ // New products pagination
+ let numSilde = Math.ceil(db.get("newest").size().value() / 4);
+ let numSlideArray = [];
+ for (let i = 0; i < numSilde; i++) {
+  numSlideArray.push(i);
+ }
+ let newest = Array.from(db.get("newest").value());
  res.render('index', {
   products: products,
-  numPageArray: numPageArray
+  numPageArray: numPageArray,
+  newest: newest,
+  // numSlideArray: numSlideArray
  });
 });
 
 app.get("/search", (req, res) => {
  let q = req.query.q;
+ // Search Products Pagination
  let page = parseInt(req.query.page) || 1;
  let perPage = 10;
 
@@ -69,10 +81,19 @@ app.get("/search", (req, res) => {
  for (let i = 0; i < numPage; i++) {
   numPageArray.push(i);
  }
+
+ // New products pagination
+ let numSilde = Math.ceil(db.get("newest").size().value() / 4);
+ let numSlideArray = [];
+ for (let i = 0; i < numSilde; i++) {
+  numSlideArray.push(i);
+ }
+ let newest = Array.from(db.get("newest").value());
  res.render('products/index', {
   products: matchedProducts,
   search: q,
-  numPageArray: numPageArray
+  numPageArray: numPageArray,
+  newest: newest
  })
 });
 

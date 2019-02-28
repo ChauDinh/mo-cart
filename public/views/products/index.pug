@@ -19,10 +19,11 @@ block content
     //- #flash-sale(style="width: 330px; margin-left: 15px")
     //-   .sale-product
     //-     img(src="../../../src/images/sale.jpg", alt="", style="height: 410px; border: 5px solid #000")
-
   br
-  h3.ml-5.text-black-50(style="font-weight: 300; text-shadow: none") Products: #{search}
-  hr.ml-5.mr-5
+  br
+  br
+  br
+  h3.ml-5.text-black-100(style="font-weight: bolder; text-shadow: none") All Products: #{search}
   //- p= productId
   nav.mr-5(arial-label="Page navigation example")
    ul.pagination.justify-content-end
@@ -47,6 +48,41 @@ block content
         .details
           h6(style="font-weight: lighter; font-family: 'Satisfy', cursive;")= product.name
           p(style="font-weight: 300; font-family: 'Satisfy', cursive; font-size: 1.2rem")= "$" + product.price
+  br
+  br
+  br
+  h3.ml-5.text-black-100(style="font-weight: bolder; text-shadow: none") Newest Products:
+  br
+  br
+  .container(style="margin-bottom: 2rem; margin-left: 2rem")
+    #carouselExampleControls1.carousel.slide(data-ride="carousel")
+      .carousel-inner(style="padding-left: 10px; padding-right: 10px")
+        .carousel-item.active
+          .row
+            each val1 in newest.slice(0*4, 1*4)
+              .col-3
+                img.d-block.w-100(src=val1.image, alt="", style="border-radius: 10px; box-shadow: 5px 0px 3px rgba(0, 0, 0, 0.3); height: 22rem; width: 15rem !important")
+        .carousel-item
+          .row
+            each val1 in newest.slice(1*4, 2*4)
+              .col-3
+                img.d-block.w-100(src=val1.image, alt="", style="border-radius: 10px; box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3); height: 22rem")
+        .carousel-item
+          .row
+            each val1 in newest.slice(2*4, 3*4)
+              .col-3
+                img.d-block.w-100(src=val1.image, alt="", style="border-radius: 10px; box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3); height: 22rem")
+        .carousel-item
+          .row
+            each val1 in newest.slice(3*4, 4*4)
+              .col-3
+                img.d-block.w-100(src=val1.image, alt="", style="border-radius: 10px; box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3); height: 22rem")
+      a.carousel-control-prev(href="#carouselExampleControls1", role="button", data-slide="prev")
+        span.carousel-control-prev-icon(aria-hidden="true")
+        span.sr-only Previous
+      a.carousel-control-next(href="#carouselExampleControls1", role="button", data-slide="next")
+        span.carousel-control-next-icon(aria-hidden="true")
+        span.sr-only Next
     //-  .card-body
     //-   p.card-title(style="text-align: center")= product.name
       //- .d-flex.justify-content-between
